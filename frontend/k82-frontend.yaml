@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sentiment-frontend
+  template:
+    metadata:
+      labels:
+        app: sentiment-frontend
+    spec:
+      containers:
+      - name: sentiment-frontend
+        image: gcr.io/citric-campaign-455110-j7/sentiment-frontend
+        ports:
+        - containerPort: 8501
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sentiment-frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: sentiment-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8501

@@ -1,0 +1,48 @@
+Sure! Here's the English translation of your regex cheatsheet:
+
+---
+
+# Basic Characters and Their Meanings
+
+```
+.       : Matches any single character (except newline)
+^       : Start of a line
+$       : End of a line
+*       : Matches 0 or more repetitions of the preceding character
++       : Matches 1 or more repetitions of the preceding character
+?       : Matches 0 or 1 repetition of the preceding character (optional)
+[]      : Matches any one character inside the brackets
+[^]     : Matches any character not listed inside the brackets
+{}      : Matches a specific number of repetitions (e.g., a{3} → aaa)
+
+|       : OR. For example, a|b matches either "a" or "b"
+()      : Groups expressions together. E.g., (abc)+ → abc, abcabc, ...
+
+\       : Escape character (e.g., \. matches a literal dot)
+```
+
+---
+
+# Common Shortcuts
+
+```
+\d      : Digit (0-9)
+\D      : Non-digit
+\w      : Word character (letter, digit, or underscore) → [a-zA-Z0-9_]
+\W      : Non-word character (anything except letter, digit, or underscore)
+\s      : Whitespace character (space, tab, newline)
+\S      : Non-whitespace character
+```
+
+---
+
+# Examples
+
+```
+http\S+     : Matches "http" followed by non-whitespace characters (e.g., a URL)
+@\w+        : Matches a mention (word starting with @)
+#\w+        : Matches a hashtag (word starting with #)
+[^\w\s]     : Matches anything except letters, digits, underscores, and whitespace
+```
+
+Let me know if you want a printable PDF or a visual cheatsheet version!

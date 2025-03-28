@@ -1,0 +1,2 @@
+The below kaggle link directs you to cleaned text csv file.
+https://www.kaggle.com/datasets/aliyazcanigrolu/cleaned-sentiment140
