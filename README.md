@@ -24,37 +24,40 @@ The backend is built with **FastAPI**, containerized using **Docker**, deployed 
 
 ## 🗂️ Project Structure
 
-```
+```bash
 sentiment-mlops/
+├── app/                      # FastAPI backend
+│   ├── main.py               # API endpoints
+│   ├── model.py              # Model loading & prediction logic
+│   └── utils.py              # Preprocessing utilities
 │
-├── data/                  # Dataset & preprocessing scripts
-│   └── prepare_data.py
+├── data/                     # Data processing
+│   └── prepare_data.py       # Script to clean and format raw data
 │
-├── training/              # Model training & evaluation
-│   ├── train.py
-│   └── evaluate.py
+├── training/                 # Model training & evaluation
+│   ├── train.py              # Trains model and saves artifacts
+│   └── evaluate.py           # (Optional) evaluation metrics
 │
-├── models/                # Trained model & vectorizer (pkl files)
+├── models/                   # Saved model files
+│   ├── sentiment_model.pkl
+│   └── tfidf_vectorizer.pkl
 │
-├── app/                   # FastAPI backend
-│   ├── main.py
-│   ├── model.py
-│   └── utils.py
+├── frontend/                 # Streamlit web app
+│   ├── app_ui.py             # Streamlit UI logic
+│   ├── Dockerfile            # Frontend Dockerfile
+│   └── requirements.txt      # Frontend dependencies
 │
-├── frontend/              # Streamlit frontend
-│   ├── app_ui.py
-│   ├── Dockerfile
-│   └── requirements.txt
-│
-├── notebooks/             # Exploratory data analysis
+├── notebooks/                # Jupyter notebooks for EDA
 │   └── EDA.ipynb
 │
-├── Dockerfile             # Backend Dockerfile
-├── build.yaml             # Kubernetes deployment manifest (backend)
-├── k8s-frontend.yaml      # Kubernetes deployment manifest (frontend)
-├── requirements.txt       # Backend dependencies
-└── README.md              # Project documentation
-```
+├── Dockerfile                # Backend Dockerfile
+├── requirements.txt          # Backend dependencies
+├── build.yaml                # Kubernetes manifest (backend)
+├── k8s-frontend.yaml         # Kubernetes manifest (frontend)
+└── README.md                 # You’re looking at it :)
+
+
+
 
 ---
 
